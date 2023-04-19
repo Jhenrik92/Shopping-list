@@ -1,0 +1,159 @@
+
+body {
+    overflow: scroll; /* When content overflows window, scroll is activated */
+}
+
+#container { /* Parents of all divs, except body */
+    width: 50%;
+    height: auto; /* heigth adjusts to what child-divs require */
+    margin: auto; /* this div is centered in its parent div (body) */
+
+    padding-top: 1px;
+    padding-bottom: 70px;
+    border-radius: 5%;
+    
+    min-width: 450px; /*Stop shrinking at 450px when browser size decreases */
+
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    border-color: rgba(248, 245, 245, 0.377);
+    border-radius: 10px;
+    background: rgba(246, 245, 245, 0.699);
+}
+
+#heading {
+    text-align: center; /* Centers content in heading-div */
+}
+
+h3 {
+    padding-left: 40px; /* Content of each category-heading is moved to the right */
+}
+
+#grønt, #meieri, #bakevarer, #tørrvarer, 
+#frysevarer, #husholdning, #hygiene, #annet { /* Separate divs for each category */
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding-left: 10px;
+    margin-bottom: 5px; /* Makes space between all categories */
+    height: 59.5px;
+    display: flex;
+    overflow-y: hidden; /* All that overflows the div downwards, is hidden */ 
+    position: relative; /* This parent-child is relative so that direct children 
+    (#text, #addItem, #input, #grøntlist) with position absolute can be hidden on overflow */
+}
+
+#openButtonGrønt, #openButtonMeieri, #openButtonBake,
+#openButtonTørr, #openButtonFryse, #openButtonHus,
+#openButtonHygiene, #openButtonAnnet {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 115%;
+    margin: auto;
+    margin-right: 10px;
+    margin-top: 12px;
+    position:absolute; /* prevents elements from taking up any space. Both close/open button can 
+    be placed on top of eachother */ 
+}
+
+#closeButtonGrønt, #closeButtonMeieri, #closeButtonBake,
+#closeButtonTørr, #closeButtonFryse, #closeButtonHus,
+#closeButtonHygiene, #closeButtonAnnet {
+    visibility: hidden; /* Is hidden until category is opened. Changed in jQuery */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 115%;
+    margin: auto;
+    margin-right: 10px;
+    margin-top: 12px;
+    position: absolute;
+}
+
+#addItemGrønt, #addItemMeieri, #addItemBake,
+#addItemTørr, #addItemFryse, #addItemHus,
+#addItemHygiene, #addItemAnnet { /* Container that holds input/search for grocery */
+    visibility: hidden;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#inputGrønt, #inputMeieri, #inputBake, #inputTørr,
+#inputFryse, #inputHus, #inputHygiene, #inputAnnet {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    border-color: rgb(141, 137, 137);
+    border-radius: 5px;
+    background: rgba(246, 245, 245, 0.547);
+    outline: none; /* When clicked/selected, no outline occures */
+    width: 160px;  
+}
+
+#grøntList, #meieriList, #bakeList, #tørrList, 
+#fryseList, #husList, #hygieneList, #annetList {
+    position: absolute;
+    margin-top: 60px;
+    
+    width: 350px;
+    height: 100px;
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    
+    overflow: scroll;
+}
+
+#text {
+    float: left;
+    min-width: 60px;
+    position: absolute;
+    margin-top: 170px;
+    font-size: 10px;
+}
+
+#trashButton {
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 3px;
+    display: flex; /* Makes button resize to fit parent div */
+    float: right; /* Moves child-div/button to the right */
+    border: none;
+    background: none;
+}
+
+#trashcan { /* Image/content of button */
+    max-width: 100%; /* Prevents image from expanding outside its parent (trashbutton) */
+    max-height: 100%;
+}
+
+
+.addedItem { /* Elements not created in HTML, occures through jQuery on users demand */
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    
+    border-radius: 5px;
+    width: auto;
+    height: 20px;
+    padding-bottom: 0px;
+    margin: 2px;
+}
+
+
+/* Hides the scroll bar without impacting scrolling */
+body::-webkit-scrollbar, #grøntList::-webkit-scrollbar, #meieriList::-webkit-scrollbar,
+#bakeList::-webkit-scrollbar, #tørrList::-webkit-scrollbar,
+#fryseList::-webkit-scrollbar, #husList::-webkit-scrollbar,
+#hygieneList::-webkit-scrollbar, #annetList::-webkit-scrollbar { 
+    display: none;
+}
+
+body {
+    background: url('https://www.alignedinsurance.com/wp-content/uploads/2019/08/grocery-store.jpg');
+    background-size: cover;
+    background-position: center; /* centers the background despite different browser sizes */
+    background-attachment: fixed; /* prevents background from changing size when categories expands */
+    height: 100%;
+}
+

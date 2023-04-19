@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.js"></script> 
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">HANDLELISTE</h1>
+        
+        <div id="grønt">
+            <h3>FRUKT OG GRØNT</h3>
+            <button id="openButtonGrønt">+</button>
+            <button id="closeButtonGrønt">-</button>
+            <div id="addItemGrønt" >
+                <input id="inputGrønt" type="text" placeholder="Legg til vare">
+            </div>
+            <div id="grøntList"></div>
+            <p id="text">* Klikk på varen for å markere at den er lagt i handlevognen.<br>
+                    * Dobbeltklikk for å fjerne varen fra handlelisten. </p>
+        </div>
+        
+        <div id="meieri">
+            <h3>MEIERIPRODUKTER</h3>
+            <button id="openButtonMeieri">+</button>
+            <button id="closeButtonMeieri">-</button>
+            <div id="addItemMeieri" >
+                <input id="inputMeieri" type="text" placeholder="Legg til vare">
+            </div>
+            <div id="meieriList"></div>
+        </div>
+        
+        <div id="bakevarer">
+            <h3>BAKEVARER</h3>
+            <button id="openButtonBake">+</button>
+            <button id="closeButtonBake">-</button>
+            <div id="addItemBake" >
+                <input id="inputBake" type="text" placeholder="Legg til vare">
+            </div>
+            <div id="bakeList"></div>
+        </div>
+        
+        <div id="tørrvarer">
+            <h3>TØRRVARER</h3>
+            <button id="openButtonTørr">+</button>
+            <button id="closeButtonTørr">-</button>
+            <div id="addItemTørr" >
+                <input id="inputTørr" type="text" placeholder="Legg til vare">
+            </div>
+            <div id="tørrList"></div>
+            </div>
+        
+        <div id="frysevarer">      
+            <h3>FRYSEVARER</h3>
+            <button id="openButtonFryse">+</button>
+            <button id="closeButtonFryse">-</button>
+            <div id="addItemFryse" >
+                <input id="inputFryse" type="text" placeholder="Legg til vare">
+            </div>
+                <div id="fryseList"></div>
+            </div>
+            
+        <div id="husholdning">
+            <h3>HUSHOLDNING</h3>
+            <button id="openButtonHus">+</button>
+            <button id="closeButtonHus">-</button>
+            <div id="addItemHus" >
+                <input id="inputHus" type="text" placeholder="Legg til vare">
+            </div>
+            <div id="husList"></div>
+            </div>
+            
+        <div id="hygiene">
+            <h3>HYGIENE</h3>
+            <button id="openButtonHygiene">+</button>
+            <button id="closeButtonHygiene">-</button>
+            <div id="addItemHygiene" >
+                <input id="inputHygiene" type="text" placeholder="Legg til vare">
+            </div>
+            <div id="hygieneList"></div>
+            </div>
+            
+        <div id="annet">
+            <h3>ANNET</h3>
+            <button id="openButtonAnnet">+</button>
+            <button id="closeButtonAnnet">-</button>
+            <div id="addItemAnnet" >
+                <input id="inputAnnet" type="text" placeholder="Legg til vare">
+            </div>
+            <div id="annetList"></div>
+            </div>            
+
+    
+            <button id="trashButton">
+                <img id="trashcan" src="recycle-bin.png" alt="">
+            </button>
+        </div>
+
+        <script src="functions.js"></script>
+    </div>
+</body>
+</html>
