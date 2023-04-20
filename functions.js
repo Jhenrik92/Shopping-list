@@ -1,4 +1,5 @@
 
+
 $('#openButtonGrønt').click(function () { 
     $('#grønt').animate({
         height: 200, // expands the div
