@@ -20,6 +20,22 @@ body {
     background: rgba(246, 245, 245, 0.699);
 }
 
+.categoryContainer {
+    text-align: center;
+    margin-top: -10;
+    margin-bottom: 40;
+}
+
+.categoryAdd, .categoryRemove, .categoryEdit, .cancelRemove {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.377);
+    background: rgba(246, 245, 245, 0.607);
+}
+
 #heading {
     text-align: center; /* Centers content in heading-div */
 }
@@ -28,8 +44,9 @@ h3 {
     padding-left: 40px; /* Content of each category-heading is moved to the right */
 }
 
-#grønt, #meieri, #bakevarer, #tørrvarer, 
-#frysevarer, #husholdning, #hygiene, #annet { /* Separate divs for each category */
+
+
+.categoryList { /* Separate divs for each category */
     margin-right: 20px;
     margin-left: 20px;
     border: 1px solid;
@@ -43,9 +60,9 @@ h3 {
     (#text, #addItem, #input, #grøntlist) with position absolute can be hidden on overflow */
 }
 
-#openButtonGrønt, #openButtonMeieri, #openButtonBake,
-#openButtonTørr, #openButtonFryse, #openButtonHus,
-#openButtonHygiene, #openButtonAnnet {
+
+.openButton{
+    z-index: 2;
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -57,10 +74,8 @@ h3 {
     be placed on top of eachother */ 
 }
 
-#closeButtonGrønt, #closeButtonMeieri, #closeButtonBake,
-#closeButtonTørr, #closeButtonFryse, #closeButtonHus,
-#closeButtonHygiene, #closeButtonAnnet {
-    visibility: hidden; /* Is hidden until category is opened. Changed in jQuery */
+.closeButton {
+    z-index: 1; 
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -71,16 +86,41 @@ h3 {
     position: absolute;
 }
 
-#addItemGrønt, #addItemMeieri, #addItemBake,
-#addItemTørr, #addItemFryse, #addItemHus,
-#addItemHygiene, #addItemAnnet { /* Container that holds input/search for grocery */
+.removeButton {
+    visibility: hidden;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 115%;
+    margin: auto;
+    margin-right: 10px;
+    margin-top: 12px;
+    position: absolute;
+    border-color: red;
+    border-width: 3px;
+}
+
+.editButton {
+    visibility: hidden;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 115%;
+    margin: auto;
+    margin-right: 10px;
+    margin-top: 12px;
+    position: absolute;
+    border-color: rgb(144, 238, 144);
+    border-width: 3px;
+}
+
+.addItem { /* Container that holds input/search for grocery */
     visibility: hidden;
     margin-top: 20px;
     margin-left: 20px;
 }
 
-#inputGrønt, #inputMeieri, #inputBake, #inputTørr,
-#inputFryse, #inputHus, #inputHygiene, #inputAnnet {
+.input {
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     border-color: rgb(141, 137, 137);
     border-radius: 5px;
@@ -89,8 +129,7 @@ h3 {
     width: 160px;  
 }
 
-#grøntList, #meieriList, #bakeList, #tørrList, 
-#fryseList, #husList, #hygieneList, #annetList {
+.list {
     position: absolute;
     margin-top: 60px;
     
@@ -142,10 +181,7 @@ h3 {
 
 
 /* Hides the scroll bar without impacting scrolling */
-body::-webkit-scrollbar, #grøntList::-webkit-scrollbar, #meieriList::-webkit-scrollbar,
-#bakeList::-webkit-scrollbar, #tørrList::-webkit-scrollbar,
-#fryseList::-webkit-scrollbar, #husList::-webkit-scrollbar,
-#hygieneList::-webkit-scrollbar, #annetList::-webkit-scrollbar { 
+body::-webkit-scrollbar, .list::-webkit-scrollbar { 
     display: none;
 }
 

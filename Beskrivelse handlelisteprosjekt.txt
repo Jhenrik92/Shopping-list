@@ -1,0 +1,54 @@
+Handleliste
+
+Laget en applikasjon som forenkler handleturen. 
+Delt opp i ulike kategorier, slik at du får med deg alle varene fra en avdeling før du går videre.
+
+I forkant av handleturen legger du inn varene du trenger.
+
+- Når du er i butikken, kommer du til frukt og grønt, åpner kategorien og plukker alt på listen.
+- Underveis når legger varer i vognen, markerer du dem i grønt for å ha orden på hva som er lagt oppi og ikke.
+- Er der varer på listen du ikke trenger likevel, kan du dobbeltklikke på varen for å få den fjernet.
+
+Når du er ferdig å handle, vil du slette hele listen for å gjøre den klar til neste gang..
+
+
+
+Har brukt HTML, CSS og JS (i JS all hovedsak jQuery)
+
+Laget skjellettet i HTML. 
+1. En stor div som skal romme alle elemenetene. 
+2. Lagt inn hver enkelt kategori som egne child-divs av denne.
+3. Hver av disse child-divsene har egne childs, som knapper, titler, input og et inputfelt. 
+4. Alle elementer har fått sin unike ID, for å gjøre det lett å manipulere enkeltvis i CSS og med jQuery.
+
+Så begynte jeg å lage selve uttrykket i CSS.
+1. Begynte med å tilpasse ytterste div.. (container)
+2. Så plassering og styling av hver enkelt kategori.. Kategoriene er utvidbare, så overflow i y-askje skjules.
+3. Stylet knappene for å utvide/lukke kategoriene. 
+4. Stylet input og skjulte også denne før kategorien åpnes.
+5. Grøntlist, selve diven der varene legger seg. Fikk overflow i y-aksjen, prøvd meg fram til jeg fant løsning
+   som fikk elementene ned på ny linje. Lagt på scroll hvis man skal kjøpe mange varer.
+
+Så JS. Har brukt jQuery.
+1. Klikkfunksjon koblet på diven med ID openButtonGrønt...
+
+2. En keypress funksjon, slik at når du trykker enter etter å ha lagt varen inn, så submitter den.
+	- Også lagt til at hvis verdien i input er ingenting, så returnerer den ingenting. 
+	- Har den en verdi, og du presser enter, får knappen den verdien og inputfeltet tømmes igjen.
+
+3. Utfordrende delen: 
+	- Greit å få verdien som ble skrevet inn i inputfeltet til å overføres til knappene/varene 
+	  som ble lagt inn i listen, men.. 
+	- Når lagde flere, fikk alle samme verdi/navn. Og alle markert i grønt eller slettet på en gang. 
+	  Pga samme class. 
+	- Brukte samme class fordi jeg ville ha muligheten til å cleare alle på en gang. 
+	  Måtte ha unik id i tillegg, for at alle skulle få egne verdier:
+
+1. Lagde en itemCounter som ligger globalt, slik at alle inputfeltene for hver kategori kan nå den.
+2. For hver gang det ble lagt til en ny vare, incrementerte jeg itemCount med 1. 
+3. Når knappen lages, får den en ID som heter Item, pluss det unike tallet i itemCount. 
+4. To onclick-metoder også lagt inn i knappene som lages, som er koblet på to funksjoner: fjerne og markere.
+
+4. Sikkerhetsknapp før du clearer hele listen, på om du faktisk vil cleare den. Hvis, confirm, clear. 
+
+
